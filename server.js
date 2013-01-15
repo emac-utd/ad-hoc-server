@@ -25,6 +25,12 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
+//Needed for socket.io to work on Heroku
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
+
 //Set up express
 app.use(express.bodyParser());
 app.use(express.static(__dirname + '/public'));
