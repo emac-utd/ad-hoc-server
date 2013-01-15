@@ -12,9 +12,9 @@ var SITE_ADDRESS = 'http://young-savannah-6436.heroku.com/';
 var kittenTemplate = '<img src="http://placekitten.com/{width}/{height}" />';
 var yoDawgTemplate = '<iframe width="{width}" height="{height}" src="{url}" />';
 var socketDemoMessage = {};
-var socketDemoTemplate = '<iframe src="http://localhost:3000/socketdemocontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
-var redditTemplate = '<iframe width="{width}" height="{height}" src="' + SITE_ADDRESS + 'reddit" />';
-var drawTemplate = '<iframe src="http://localhost:3000/drawcontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
+var socketDemoTemplate = '<iframe src="' + SITE_ADDRESS + 'socketdemocontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
+var redditTemplate = '<iframe width="{width}" height="{height}" src="' + SITE_ADDRESS + 'redditframe" />';
+var drawTemplate = '<iframe src="' + SITE_ADDRESS + 'drawcontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
 
 
 
