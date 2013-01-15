@@ -7,7 +7,7 @@ var express = require('express'),
     countdown = require('countdown');
 
 //Constants
-var SITE_ADDRESS = 'http://localhost:3000/';
+var SITE_ADDRESS = 'http://young-savannah-6436.heroku.com/';
 
 var kittenTemplate = '<img src="http://placekitten.com/{width}/{height}" />';
 var yoDawgTemplate = '<iframe width="{width}" height="{height}" src="{url}" />';
