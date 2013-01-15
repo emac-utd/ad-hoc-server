@@ -221,4 +221,6 @@ app.get('/gooutside', function(req, res){
     }
 });
 
-server.listen(process.env.PORT);
+var port = process.env.PORT || 3000;
+app.listen(port);
+console.log('listening on ' + port);
