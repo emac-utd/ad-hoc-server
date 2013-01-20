@@ -12,6 +12,7 @@ var SITE_ADDRESS = 'http://young-savannah-6436.heroku.com/';
 var kittenTemplate = '<img src="http://placekitten.com/{width}/{height}" />';
 var cageTemplate = '<img src="http://www.placecage.com/{width}/{height}" />';
 var crazyCageTemplate = '<img src="http://www.placecage.com/c/{width}/{height}" />';
+var murrayTemplate = '<img src="http://www.fillmurray.com/{width}/{height}" />';
 var yoDawgTemplate = '<iframe width="{width}" height="{height}" src="{url}" />';
 var socketDemoMessage = {};
 var socketDemoTemplate = '<iframe src="' + SITE_ADDRESS + 'socketdemocontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
@@ -93,6 +94,10 @@ app.get('/cage', function(req, res){
     //Crazy Cage
     else
         res.send(crazyCageTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
+});
+
+app.get('/billmurray', function(req, res){
+    res.send(murrayTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
 });
 
 //Socket.io connection handling
