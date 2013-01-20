@@ -10,6 +10,8 @@ var express = require('express'),
 var SITE_ADDRESS = 'http://young-savannah-6436.heroku.com/';
 
 var kittenTemplate = '<img src="http://placekitten.com/{width}/{height}" />';
+var cageTemplate = '<img src="http://www.placecage.com/{width}/{height}" />';
+var crazyCageTemplate = '<img src="http://www.placecage.com/c/{width}/{height}" />';
 var yoDawgTemplate = '<iframe width="{width}" height="{height}" src="{url}" />';
 var socketDemoMessage = {};
 var socketDemoTemplate = '<iframe src="' + SITE_ADDRESS + 'socketdemocontent/?width={width}&height={height}&location={location}" width="{width}" height="{height}" />';
@@ -81,6 +83,16 @@ app.get('/yodawg', function(req, res){
 //Default to cats, just like the rest of the internet
 app.get('/kitten', function(req, res){
     res.send(kittenTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
+});
+
+app.get('/cage', function(req, res){
+    var crazyMeter = Math.random();
+    //Normal Cage nine times out of 10
+    if(crazyMeter < .9)
+        res.send(cageTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
+    //Crazy Cage
+    else
+        res.send(crazyCageTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
 });
 
 //Socket.io connection handling
