@@ -187,16 +187,12 @@ function getTop() {
 
 
 app.get('/reddit', function(req, res) {
-    res.send(redditTemplate.replace("{width}", req.query.width).replace("{height}", req.query.height));
-});
-
-app.get('/redditframe', function(req, res) {
 
     getTop();
 
-    var iframe = {title: redditRequest.title, link: redditRequest.url, comments: 'comments', permalink: ("http://reddit.com" + redditRequest.permalink)};
-    console.log(iframe);
-    res.render('reddit.jade', iframe);
+    var redditData = {title: redditRequest.title, link: redditRequest.url, comments: 'comments', permalink: ("http://reddit.com" + redditRequest.permalink)};
+    console.log(redditData);
+    res.render('reddit.jade', redditData);
 
     // res.send(redditTemplate.replace("{width}", 400).replace("{height}", 200).replace("{url}", redditRequest.url).replace("{title}", redditRequest.title).replace("{permalink}", redditRequest.permalink));
 
